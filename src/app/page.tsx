@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ArrowRight, BowlFood, Storefront, TrendUp } from "@phosphor-icons/react/dist/ssr";
 import { Hero } from "@/components/hero";
 import { LeadForm } from "@/components/lead-form";
+import { RiceJourney } from "@/components/rice-journey";
 import { Reveal } from "@/components/reveal";
 import { SiteHeader } from "@/components/site-header";
 import { siteContent } from "@/content/site-content";
@@ -16,30 +17,13 @@ export default function Home() {
 
       <section id="about" className="section about-section">
         <div className="section-shell about-grid">
-          <Reveal className="about-copy">
+          <div className="about-copy">
             <p className="section-kicker">认识汉少爷</p>
             <h2>{siteContent.about.title}</h2>
             <p className="section-body">{siteContent.about.body}</p>
             <p className="brand-statement">{siteContent.about.statement}</p>
-          </Reveal>
-          <div className="about-collage" aria-label="稻田、蒸汽与手作场景">
-            <Reveal className="about-image about-image-main">
-              <Image
-                src="/media/mood-rice.webp"
-                alt="成熟稻田与山野晨光"
-                fill
-                sizes="(max-width: 767px) 78vw, 34vw"
-              />
-            </Reveal>
-            <Reveal className="about-image about-image-detail" delay={0.12}>
-              <Image
-                src="/media/mood-steam.webp"
-                alt="带着蒸汽的手作米食场景"
-                fill
-                sizes="(max-width: 767px) 56vw, 24vw"
-              />
-            </Reveal>
           </div>
+          <RiceJourney items={siteContent.about.journey} />
         </div>
       </section>
 
