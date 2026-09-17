@@ -33,6 +33,41 @@
 5. 不提交 `.env.local`、密钥、数据库备份、内部参考资料和运行日志。
 6. 后端接手前先阅读本目录 `docs/`，再基于最新提交创建分支开发。
 
+## 本地与 GitHub 同步规则
+
+当前远端：`https://github.com/739538379a-png/hanshaoye-website.git`
+
+当前主分支：`main`，本地 `main` 跟踪远端 `origin/main`。
+
+正常开发流程：
+
+```bash
+git pull --rebase origin main
+git add .
+git commit -m "说明本次改动"
+git push origin main
+```
+
+回退已提交内容时，优先使用可追溯的反向提交：
+
+```bash
+git revert <要回退的提交编号>
+git push origin main
+```
+
+这样本地和 GitHub 都保留完整历史。除非明确确认远端分支状态，否则不要使用 `git reset --hard`、`git push --force` 或覆盖远端历史的操作；确需重写历史时，只能先确认双方状态，再使用 `--force-with-lease`。
+
+每次关键操作后的验收：
+
+```bash
+git status
+git log --oneline -5
+git fetch origin
+git diff main origin/main
+```
+
+最后一条没有输出时，表示本地 `main` 与远端 `origin/main` 内容一致。
+
 ## 交接检查
 
 - `npm run lint` 通过
