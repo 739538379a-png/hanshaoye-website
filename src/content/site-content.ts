@@ -4,10 +4,9 @@ export type NavigationItem = {
 };
 
 export type ProductItem = {
-  name: string;
-  category: string;
-  description: string;
   image: string;
+  alt: string;
+  imagePosition: string;
 };
 
 export type StoreItem = {
@@ -63,22 +62,19 @@ export const siteContent = {
   },
   products: [
     {
-      name: "爆浆芝士火腿饭团",
-      category: "爆浆系列",
-      description: "热饭、芝士与丰富馅料层层相遇，带来饱满而温暖的口感。",
-      image: "/media/product-cheese-ham.webp",
+      image: "/media/product-showcase-01.webp",
+      alt: "木盘上摆放的汉少爷饭团与新鲜食材",
+      imagePosition: "50% 57%",
     },
     {
-      name: "牛油果金枪鱼饭团",
-      category: "精选海鲜",
-      description: "清新食材与米香相衬，适合轻盈又需要满足感的一餐。",
-      image: "/media/product-avocado-tuna.webp",
+      image: "/media/product-showcase-02.webp",
+      alt: "蒸笼、杂粮饭与切开的饭团",
+      imagePosition: "51% 55%",
     },
     {
-      name: "奥尔良鸡排饭团",
-      category: "肉类系列",
-      description: "现制热饭包裹鲜香鸡排，让便捷用餐也有扎实滋味。",
-      image: "/media/product-chicken.webp",
+      image: "/media/product-showcase-03.webp",
+      alt: "汉少爷米浆和豆浆产品陈列",
+      imagePosition: "58% 50%",
     },
   ] satisfies ProductItem[],
   stores: [

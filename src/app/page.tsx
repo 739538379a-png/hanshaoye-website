@@ -29,21 +29,25 @@ export default function Home() {
 
       <section id="products" className="section products-section">
         <div className="section-shell">
-          <Reveal className="section-heading vertical-heading">
+          <Reveal className="section-heading product-heading">
             <h2>把一顿热饭，认真握在手里</h2>
-            <p>以米为基础，围绕温暖、便捷与真实口感持续打磨产品。</p>
+            <p>以东方米食文化为基础，融合现代消费场景，打造健康、温暖、便捷的新式热饭团产品体系</p>
+            <button className="product-explore-button" type="button" disabled>
+              探索产品
+            </button>
           </Reveal>
 
           <div className="product-track">
             {siteContent.products.map((product, index) => (
-              <Reveal className={`product-item product-item-${index + 1}`} key={product.name} delay={index * 0.08}>
-                <div className="product-image">
-                  <Image src={product.image} alt={product.name} fill sizes="(max-width: 767px) 82vw, 30vw" />
-                </div>
-                <div className="product-copy">
-                  <span>{product.category}</span>
-                  <h3>{product.name}</h3>
-                  <p>{product.description}</p>
+              <Reveal className={`product-item product-item-${index + 1}`} key={product.image} delay={index * 0.08}>
+                <div className="product-image" tabIndex={0} aria-label={product.alt}>
+                  <Image
+                    src={product.image}
+                    alt={product.alt}
+                    fill
+                    sizes="(max-width: 767px) 82vw, (max-width: 1023px) 31vw, 26vw"
+                    style={{ objectPosition: product.imagePosition }}
+                  />
                 </div>
               </Reveal>
             ))}
