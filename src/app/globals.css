@@ -652,14 +652,62 @@ a {
   inset: 0;
 }
 
+.craft-image {
+  isolation: isolate;
+}
+
+.craft-image::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: -12%;
+  pointer-events: none;
+  opacity: 0.22;
+  background:
+    radial-gradient(ellipse 15% 32% at 21% 60%, rgba(255, 246, 229, 0.6), transparent 72%),
+    radial-gradient(ellipse 13% 36% at 28% 52%, rgba(255, 245, 225, 0.46), transparent 70%),
+    radial-gradient(ellipse 10% 28% at 16% 46%, rgba(255, 250, 239, 0.34), transparent 72%);
+  filter: blur(16px);
+}
+
 .craft-image::after {
   content: "";
+  z-index: 2;
   background: linear-gradient(0deg, rgba(45, 25, 13, 0.73), transparent 64%);
+}
+
+.craft-image img {
+  transition: transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .craft-image::before {
+    animation: craft-steam-drift 10s ease-in-out infinite alternate;
+  }
+
+  .craft-section:hover .craft-image::before {
+    animation-duration: 6.5s;
+    opacity: 0.34;
+  }
+}
+
+.craft-section:hover .craft-image img {
+  transform: scale(1.045);
+}
+
+@keyframes craft-steam-drift {
+  from {
+    transform: translate3d(-2%, 6%, 0) scale(0.94);
+  }
+
+  to {
+    transform: translate3d(5%, -8%, 0) scale(1.08);
+  }
 }
 
 .craft-copy {
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   left: clamp(1.4rem, 6vw, 6rem);
   right: 1.4rem;
   bottom: clamp(1.7rem, 6vw, 5rem);
@@ -667,18 +715,16 @@ a {
 }
 
 .craft-copy h2 {
-  max-width: 12ch;
   margin: 0;
-  font-size: clamp(2.25rem, 5.8vw, 5.5rem);
+  font-size: clamp(1.4rem, 5.7vw, 5.25rem);
   letter-spacing: -0.06em;
   line-height: 1.05;
+  white-space: nowrap;
 }
 
-.craft-copy p {
-  max-width: 30rem;
-  margin: 1.4rem 0 0;
-  color: rgba(245, 239, 230, 0.86);
-  line-height: 1.75;
+.craft-breathing-title {
+  display: inline-block;
+  transform-origin: left bottom;
 }
 
 .store-intro {
@@ -1081,7 +1127,7 @@ a {
   }
 
   .craft-copy h2 {
-    font-size: clamp(2.35rem, 11vw, 3.7rem);
+    font-size: clamp(1.35rem, 5.7vw, 2rem);
   }
 
   .store-gallery {

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowRight, BowlFood, Storefront, TrendUp } from "@phosphor-icons/react/dist/ssr";
 import { Hero } from "@/components/hero";
+import BreathingText from "@/components/fancy/text/breathing-text";
 import { LeadForm } from "@/components/lead-form";
 import { RiceJourney } from "@/components/rice-journey";
 import { Reveal } from "@/components/reveal";
@@ -65,8 +66,19 @@ export default function Home() {
           />
         </div>
         <Reveal className="craft-copy">
-          <h2 id="craft-title">看得见的制作，也看得见的认真</h2>
-          <p>从热米饭到层层铺料，每一步都围绕真实门店出品展开。</p>
+          <h2 id="craft-title">
+            <BreathingText
+              className="craft-breathing-title"
+              fromFontVariationSettings="'wght' 520"
+              toFontVariationSettings="'wght' 780"
+              transition={{ duration: 2.4, ease: "easeInOut" }}
+              staggerDuration={0.055}
+              staggerFrom="center"
+              repeatDelay={0.5}
+            >
+              看得见的健康，也看得见的热腾
+            </BreathingText>
+          </h2>
         </Reveal>
       </section>
 
