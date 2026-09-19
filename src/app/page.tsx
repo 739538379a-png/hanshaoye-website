@@ -6,6 +6,7 @@ import { LeadForm } from "@/components/lead-form";
 import { RiceJourney } from "@/components/rice-journey";
 import { Reveal } from "@/components/reveal";
 import { SiteHeader } from "@/components/site-header";
+import { StoreShowcase } from "@/components/store-showcase";
 import { siteContent } from "@/content/site-content";
 
 const valueIcons = [BowlFood, Storefront, TrendUp];
@@ -82,31 +83,7 @@ export default function Home() {
         </Reveal>
       </section>
 
-      <section id="stores" className="section stores-section">
-        <div className="section-shell">
-          <Reveal className="store-intro">
-            <p className="section-kicker">空间展示</p>
-            <h2>每一家门店，都是品牌体验的落点</h2>
-          </Reveal>
-          <div className="store-gallery">
-            {siteContent.stores.map((store, index) => (
-              <Reveal className={`store-item store-item-${index + 1}`} key={store.title} delay={index * 0.08}>
-                <div className="store-image">
-                  <Image
-                    src={store.image}
-                    alt={store.title}
-                    fill
-                    sizes="(max-width: 767px) 88vw, 45vw"
-                    style={{ objectPosition: store.imagePosition }}
-                  />
-                </div>
-                <h3>{store.title}</h3>
-                <p>{store.description}</p>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <StoreShowcase slides={siteContent.stores} />
 
       <section id="cooperation" className="section cooperation-section">
         <div className="section-shell cooperation-grid">

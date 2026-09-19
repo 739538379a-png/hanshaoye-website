@@ -10,10 +10,9 @@ export type ProductItem = {
 };
 
 export type StoreItem = {
-  title: string;
-  description: string;
   image: string;
-  imagePosition?: string;
+  alt: string;
+  imagePosition: string;
 };
 
 export type JourneyItem = {
@@ -79,22 +78,34 @@ export const siteContent = {
   ] satisfies ProductItem[],
   stores: [
     {
-      title: "真实门店日常",
-      description: "产品、空间与服务共同构成完整的品牌体验。",
-      image: "/media/store-counter.webp",
-      imagePosition: "center",
+      image: "/media/store-showcase-01.webp",
+      alt: "汉少爷杭州滨江银泰店的门店效果图",
+      imagePosition: "50% 48%",
     },
     {
-      title: "走进城市消费场景",
-      description: "围绕商场与通勤场景，让一顿热饭更容易抵达。",
-      image: "/media/store-crowd.webp",
-      imagePosition: "center",
+      image: "/media/store-showcase-02.webp",
+      alt: "汉少爷重庆巴南万达广场店的门店效果图",
+      imagePosition: "50% 52%",
     },
     {
-      title: "看得见的现制过程",
-      description: "开放操作场景，让产品呈现更直观、更有温度。",
-      image: "/media/store-product.webp",
-      imagePosition: "center",
+      image: "/media/store-showcase-03.webp",
+      alt: "汉少爷重庆九龙坡喜盈门店的门店效果图",
+      imagePosition: "50% 51%",
+    },
+    {
+      image: "/media/store-showcase-04.webp",
+      alt: "汉少爷重庆两江新区财富中心店的门店效果图",
+      imagePosition: "50% 50%",
+    },
+    {
+      image: "/media/store-showcase-05.webp",
+      alt: "汉少爷重庆两江新区大融城店的门店效果图",
+      imagePosition: "49% 52%",
+    },
+    {
+      image: "/media/store-showcase-06.webp",
+      alt: "汉少爷重庆两江新区光环店的门店效果图",
+      imagePosition: "50% 50%",
     },
   ] satisfies StoreItem[],
   cooperation: {
