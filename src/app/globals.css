@@ -83,6 +83,17 @@ a {
   margin-inline: auto;
 }
 
+.section-entry {
+  display: flex;
+  align-items: flex-start;
+  min-height: 42px;
+  margin: 0 0 clamp(2.8rem, 5vw, 4.8rem);
+}
+
+.section-entry .section-link {
+  margin: 0;
+}
+
 .section-kicker {
   margin: 0 0 1.4rem;
   font-size: 0.78rem;
@@ -371,6 +382,17 @@ a {
   background: var(--brown);
 }
 
+.hero-actions .button-primary {
+  min-height: 38px;
+  gap: 0.85rem;
+  padding: 0.28rem 0.28rem 0.28rem 0.9rem;
+}
+
+.hero-actions .button-primary .button-action-icon {
+  width: 28px;
+  height: 28px;
+}
+
 .button-action-icon {
   display: grid;
   width: 30px;
@@ -554,28 +576,6 @@ a {
   letter-spacing: 0.14em;
 }
 
-.journey-toggle {
-  display: inline-flex;
-  min-height: 42px;
-  align-items: center;
-  gap: 0.48rem;
-  padding: 0 0.9rem;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-action);
-  color: var(--brown);
-  background: rgba(245, 239, 230, 0.72);
-  cursor: pointer;
-}
-
-.journey-toggle span {
-  font-size: 0.78rem;
-  font-weight: 700;
-}
-
-.journey-panel[data-motion-state="reduced"] .journey-toggle {
-  display: none;
-}
-
 .journey-rail {
   width: 100%;
   overflow: hidden;
@@ -674,24 +674,17 @@ a {
 }
 
 .product-heading h2 {
-  max-width: 12ch;
+  max-width: none;
 }
 
 .product-heading p {
   max-width: 38rem;
 }
 
-.product-explore-button {
-  margin-top: 1.1rem;
-  padding: 0.85rem 2.15rem;
-  border: 0;
-  border-radius: 999px;
-  background: var(--brown);
-  color: #fffaf3;
-  font: inherit;
-  font-weight: 700;
-  cursor: not-allowed;
-  opacity: 1;
+.about-copy h2 span,
+.product-heading h2 span,
+.product-heading p span {
+  display: block;
 }
 
 .product-track {
@@ -851,34 +844,19 @@ a {
     #f3ede2;
 }
 
-.store-showcase-link {
-  position: absolute;
-  top: clamp(1.35rem, 3vw, 2.4rem);
-  left: clamp(1.35rem, 3vw, 2.4rem);
-  margin: 0;
-}
-
 .store-showcase-copy-breathe {
   max-width: 31rem;
   will-change: transform;
 }
 
-.store-showcase-kicker {
-  margin: 0 0 1.2rem;
-  color: var(--grain-gold);
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.16em;
-}
-
 .store-showcase-copy h2 {
-  max-width: 7ch;
+  max-width: none;
   margin: 0;
-  color: var(--brown);
+  color: color-mix(in srgb, var(--brown) 82%, var(--accent));
   font-size: clamp(2.35rem, 4.5vw, 5.2rem);
   line-height: 1.04;
   letter-spacing: -0.065em;
-  text-wrap: balance;
+  white-space: nowrap;
 }
 
 .store-showcase-description {
@@ -965,7 +943,6 @@ a {
 
 .brand-news-heading {
   max-width: 44rem;
-  margin-top: clamp(2.8rem, 5vw, 4.8rem);
 }
 
 .brand-news-kicker {
@@ -978,17 +955,17 @@ a {
 }
 
 .brand-news-heading h2 {
-  max-width: 11ch;
+  max-width: none;
   margin: 0;
   color: var(--brown);
-  font-size: clamp(2.45rem, 5.4vw, 5.8rem);
+  font-size: clamp(2.15rem, 4.5vw, 5.2rem);
   line-height: 0.98;
   letter-spacing: -0.07em;
-  text-wrap: balance;
+  white-space: nowrap;
 }
 
 .brand-news-heading > p:last-child {
-  max-width: 31rem;
+  max-width: none;
   margin: 1.5rem 0 0;
   color: var(--brown-soft);
   line-height: 1.85;
@@ -1124,6 +1101,17 @@ a {
   line-height: 1;
 }
 
+.brand-news-upcoming-ip {
+  position: absolute;
+  top: -0.5rem;
+  right: -2.7rem;
+  width: min(128%, 21rem);
+  height: auto;
+  opacity: 0.42;
+  pointer-events: none;
+  transform: rotate(-3deg);
+}
+
 .brand-news-upcoming p,
 .brand-news-upcoming > span:last-child {
   position: relative;
@@ -1146,7 +1134,7 @@ a {
 
 .cooperation-showcase {
   display: grid;
-  gap: clamp(3.25rem, 7vw, 6.5rem);
+  gap: clamp(2.8rem, 6vw, 5.5rem);
 }
 
 .cooperation-heading {
@@ -1157,19 +1145,41 @@ a {
   text-align: center;
 }
 
-.cooperation-heading > .section-link {
-  justify-self: start;
-  margin-right: auto;
-}
-
 .cooperation-heading h2 {
-  max-width: 17ch;
+  max-width: none;
   font-size: clamp(2.5rem, 5vw, 5.8rem);
   text-wrap: balance;
 }
 
-.cooperation-heading .cooperation-action {
-  margin: clamp(1.8rem, 3vw, 2.5rem) 0 0;
+.cooperation-manifesto,
+.contact-manifesto {
+  display: inline-block;
+  max-width: none !important;
+  font-size: clamp(2.75rem, 5.4vw, 6.2rem) !important;
+  font-weight: 780 !important;
+  letter-spacing: -0.07em;
+  line-height: 1.04;
+  white-space: nowrap;
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .cooperation-manifesto,
+  .contact-manifesto {
+    animation: manifesto-breathe 3.2s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes manifesto-breathe {
+  from {
+    transform: translateX(-0.35rem) scale(1);
+    font-weight: 750;
+  }
+
+  to {
+    transform: translateX(0.35rem) scale(1.026);
+    font-weight: 820;
+  }
 }
 
 .cooperation-ip-layout {
@@ -1435,6 +1445,15 @@ a {
   }
 }
 
+.contact-copy h2 {
+  max-width: none;
+}
+
+.contact-copy > p {
+  max-width: none;
+  white-space: nowrap;
+}
+
 @media (max-width: 767px) {
   .section {
     padding: 5.6rem 1.1rem;
@@ -1476,6 +1495,10 @@ a {
     display: grid;
     grid-template-columns: 1fr;
     max-width: 18rem;
+  }
+
+  .hero-actions .button-primary {
+    width: fit-content;
   }
 
   .button {
@@ -1534,23 +1557,15 @@ a {
 
   .product-track {
     display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 82%;
-    grid-template-columns: none;
-    gap: 1rem;
-    margin-inline: -1.1rem;
-    padding: 0 1.1rem 1.2rem;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-  }
-
-  .product-track::-webkit-scrollbar {
-    display: none;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.65rem;
+    margin: clamp(2.4rem, 9vw, 3.5rem) 0 0;
+    padding: 0;
+    overflow: visible;
   }
 
   .product-item {
-    scroll-snap-align: start;
+    min-width: 0;
   }
 
   .product-item-2 {
@@ -1581,14 +1596,8 @@ a {
     padding: clamp(2.4rem, 10vw, 4rem) clamp(1.6rem, 7vw, 3.25rem);
   }
 
-  .store-showcase-link {
-    top: 1.25rem;
-    left: 1.25rem;
-  }
-
   .store-showcase-copy h2 {
-    max-width: 9ch;
-    font-size: clamp(2.35rem, 11vw, 3.75rem);
+    font-size: clamp(2rem, 8.6vw, 3.1rem);
   }
 
   .store-showcase-description {
@@ -1600,7 +1609,16 @@ a {
   }
 
   .cooperation-heading h2 {
-    max-width: 15ch;
+    font-size: clamp(2.1rem, 9.2vw, 3.3rem);
+  }
+
+  .cooperation-heading h2.cooperation-manifesto,
+  .contact-copy h2.contact-manifesto {
+    font-size: clamp(1.85rem, 8vw, 3.15rem) !important;
+  }
+
+  .brand-news-heading h2 {
+    font-size: clamp(1.62rem, 7.4vw, 2.75rem);
   }
 
   .cooperation-ip-layout {
@@ -1619,6 +1637,10 @@ a {
 
   .field-grid {
     grid-template-columns: 1fr;
+  }
+
+  .contact-copy > p {
+    white-space: normal;
   }
 
   .footer-grid {

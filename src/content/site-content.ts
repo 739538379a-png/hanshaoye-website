@@ -58,7 +58,7 @@ export const siteContent = {
     primaryAction: "获取合作方案",
   },
   about: {
-    title: "从田间一粒米，到掌心一团饭",
+    title: "从田间一粒米，到手心一团饭",
     body: "汉少爷饭团诞生于重庆。我们把传统饭团带入通勤、工作与日常出行场景，让一枚握在手中的饭团，成为随时可享的一顿安心热饭。",
     statement: "千年米艺 手心相传",
     journey: [
@@ -129,7 +129,7 @@ export const siteContent = {
     },
   ] satisfies StoreItem[],
   cooperation: {
-    body: "我们期待与认同产品、重视服务并愿意长期投入经营的伙伴同行。",
+    body: "与君同行，共谋长久",
     partnersImage: "/media/cooperation-ip-partners.webp",
     partnersAlt: "两位汉少爷 IP 人物拱手致意",
     presenterImage: "/media/cooperation-ip-presenter.webp",

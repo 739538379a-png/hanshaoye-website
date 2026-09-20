@@ -42,12 +42,13 @@ export function StoreShowcase({ slides }: StoreShowcaseProps) {
   return (
     <section id="stores" className="section stores-section" aria-labelledby="stores-title">
       <div className="section-shell">
+        <div className="section-entry">
+          <SectionLink label="门店布局" href="#stores" />
+        </div>
         <div className="store-showcase">
           <div className="store-showcase-copy">
-            <SectionLink className="store-showcase-link" label="门店布局" href="#stores" />
             <div className="store-showcase-copy-breathe">
-              <p className="store-showcase-kicker">东方暖食空间</p>
-              <h2 id="stores-title">让空间，也有一顿热饭的温度。</h2>
+              <h2 id="stores-title">东方暖食空间</h2>
               <p className="store-showcase-description">
                 汉少爷以暖木、深色结构与柔和灯光构建空间基调，将手作饭团与东方米食意象融入现代商业场景，在品牌辨识度、消费体验与运营效率之间找到平衡。
               </p>

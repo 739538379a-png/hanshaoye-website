@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { Pause, Play } from "@phosphor-icons/react";
 import { motion, useMotionValue, useReducedMotion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import type { JourneyItem } from "@/content/site-content";
@@ -16,13 +15,12 @@ export function RiceJourney({ items }: RiceJourneyProps) {
   const groupWidth = useRef(0);
   const dragging = useRef(false);
   const paused = useRef(false);
-  const [isPaused, setIsPaused] = useState(false);
   const [isInteractionPaused, setIsInteractionPaused] = useState(false);
   const reducedMotion = useReducedMotion();
 
   useEffect(() => {
-    paused.current = isPaused || isInteractionPaused || Boolean(reducedMotion);
-  }, [isPaused, isInteractionPaused, reducedMotion]);
+    paused.current = isInteractionPaused || Boolean(reducedMotion);
+  }, [isInteractionPaused, reducedMotion]);
 
   useEffect(() => {
     const group = groupRef.current;
@@ -98,20 +96,10 @@ export function RiceJourney({ items }: RiceJourneyProps) {
     <div
       className="journey-panel"
       aria-label="一粒米从田间到掌心的旅程"
-      data-motion-state={reducedMotion ? "reduced" : isPaused || isInteractionPaused ? "paused" : "playing"}
+      data-motion-state={reducedMotion ? "reduced" : isInteractionPaused ? "paused" : "playing"}
     >
       <div className="journey-toolbar">
-        <p>一粒米的旅程</p>
-        <button
-          type="button"
-          className="journey-toggle"
-          aria-label={isPaused ? "继续播放一粒米的旅程" : "暂停一粒米的旅程"}
-          aria-pressed={isPaused}
-          onClick={() => setIsPaused((current) => !current)}
-        >
-          {isPaused ? <Play size={18} weight="fill" aria-hidden="true" /> : <Pause size={18} weight="fill" aria-hidden="true" />}
-          <span>{isPaused ? "继续" : "暂停"}</span>
-        </button>
+        <p>从田间，到手心</p>
       </div>
       <div
         className="journey-rail"

@@ -17,26 +17,39 @@ export default function Home() {
       <Hero {...siteContent.hero} />
 
       <section id="about" className="section about-section">
-        <div className="section-shell about-grid">
-          <div className="about-copy">
+        <div className="section-shell">
+          <div className="section-entry">
             <SectionLink label="关于我们" href="#about" />
-            <h2>{siteContent.about.title}</h2>
-            <p className="section-body">{siteContent.about.body}</p>
-            <p className="brand-statement">{siteContent.about.statement}</p>
           </div>
-          <RiceJourney items={siteContent.about.journey} />
+          <div className="about-grid">
+            <div className="about-copy">
+              <h2>
+                {siteContent.about.title.split("，").map((line) => (
+                  <span key={line}>{line}</span>
+                ))}
+              </h2>
+              <p className="section-body">{siteContent.about.body}</p>
+              <p className="brand-statement">{siteContent.about.statement}</p>
+            </div>
+            <RiceJourney items={siteContent.about.journey} />
+          </div>
         </div>
       </section>
 
       <section id="products" className="section products-section">
         <div className="section-shell">
-          <SectionLink label="关于产品" href="#products" />
+          <div className="section-entry">
+            <SectionLink label="关于产品" href="#products" />
+          </div>
           <Reveal className="section-heading product-heading">
-            <h2>把一顿热饭，认真握在手里</h2>
-            <p>以东方米食文化为基础，融合现代消费场景，打造健康、温暖、便捷的新式热饭团产品体系</p>
-            <button className="product-explore-button" type="button" disabled>
-              探索产品
-            </button>
+            <h2>
+              <span>把一枚热饭团</span>
+              <span>认真握在手里</span>
+            </h2>
+            <p>
+              <span>以东方米食文化为基础，融合现代消费场景，</span>
+              <span>打造健康、温暖、便捷的新式热饭团产品体系</span>
+            </p>
           </Reveal>
 
           <div className="product-track">
@@ -87,10 +100,11 @@ export default function Home() {
 
       <section id="cooperation" className="section cooperation-section">
         <div className="section-shell cooperation-showcase">
-          <Reveal className="cooperation-heading">
+          <div className="section-entry">
             <SectionLink label="合作共创" href="#cooperation" />
-            <h2>{siteContent.cooperation.body}</h2>
-            <SectionLink className="cooperation-action" label="获取合作方案" href="#contact" />
+          </div>
+          <Reveal className="cooperation-heading">
+            <h2 className="cooperation-manifesto">与君同行，共谋长久</h2>
           </Reveal>
           <div className="cooperation-ip-layout">
             <Reveal className="cooperation-partners" delay={0.06}>
@@ -118,16 +132,20 @@ export default function Home() {
       <BrandNews items={siteContent.news} />
 
       <section id="contact" className="section contact-section">
-        <div className="section-shell contact-grid">
-          <Reveal className="contact-copy">
+        <div className="section-shell">
+          <div className="section-entry">
             <SectionLink label="联系我们" href="#contact" />
-            <h2>一起把一顿热饭，做成值得长期坚持的事</h2>
-            <p>填写基本信息，我们会结合意向城市与实际需求进一步沟通。</p>
-            <a href={`tel:${siteContent.contact.phone.replaceAll("-", "")}`}>{siteContent.contact.phone}</a>
-          </Reveal>
-          <Reveal className="form-wrap" delay={0.1}>
-            <LeadForm />
-          </Reveal>
+          </div>
+          <div className="contact-grid">
+            <Reveal className="contact-copy">
+              <h2 className="contact-manifesto">以诚相待，久处为伴</h2>
+              <p>填写基本信息，我们会结合意向城市与实际需求进一步沟通。</p>
+              <a href={`tel:${siteContent.contact.phone.replaceAll("-", "")}`}>{siteContent.contact.phone}</a>
+            </Reveal>
+            <Reveal className="form-wrap" delay={0.1}>
+              <LeadForm />
+            </Reveal>
+          </div>
         </div>
       </section>
 
