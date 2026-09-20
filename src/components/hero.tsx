@@ -1,17 +1,17 @@
 "use client";
 
-import { Pause, Play, SpeakerHigh, SpeakerSlash } from "@phosphor-icons/react";
+import { ArrowRight, Pause, Play, SpeakerHigh, SpeakerSlash } from "@phosphor-icons/react";
 import { motion, useReducedMotion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 
 type HeroProps = {
   title: string;
+  subtitle: string;
   description: string;
   primaryAction: string;
-  secondaryAction: string;
 };
 
-export function Hero({ title, description, primaryAction, secondaryAction }: HeroProps) {
+export function Hero({ title, subtitle, description, primaryAction }: HeroProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const reduceMotion = useReducedMotion();
   const [playing, setPlaying] = useState(!reduceMotion);
@@ -73,15 +73,15 @@ export function Hero({ title, description, primaryAction, secondaryAction }: Her
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
       >
-        <p className="hero-brand-line">千年米艺 手心相传</p>
         <h1 id="hero-title">{title}</h1>
+        <p className="hero-subtitle">{subtitle}</p>
         <p>{description}</p>
         <div className="hero-actions">
           <a className="button button-primary" href="#contact">
-            {primaryAction}
-          </a>
-          <a className="button button-ghost" href="#about">
-            {secondaryAction}
+            <span>{primaryAction}</span>
+            <span className="button-action-icon" aria-hidden="true">
+              <ArrowRight size={16} weight="bold" />
+            </span>
           </a>
         </div>
       </motion.div>

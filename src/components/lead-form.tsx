@@ -87,7 +87,6 @@ export function LeadForm() {
             value={data.phone}
             onChange={(event) => setData({ ...data, phone: event.target.value })}
           />
-          <small>请输入 11 位中国大陆手机号</small>
         </label>
         <label>
           <span>意向城市</span>
@@ -106,7 +105,6 @@ export function LeadForm() {
             value={data.budget}
             onChange={(event) => setData({ ...data, budget: event.target.value })}
           />
-          <small>选填，具体方案以双方沟通为准</small>
         </label>
       </div>
 
@@ -131,7 +129,6 @@ export function LeadForm() {
         <span>{state === "loading" ? "正在提交" : "提交合作申请"}</span>
         <ArrowRight size={20} aria-hidden="true" />
       </button>
-      <p className="form-note">当前为本地原型，提交信息不会保存或外发。</p>
     </form>
   );
 }

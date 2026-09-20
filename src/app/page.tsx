@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { ArrowRight, BowlFood, Storefront, TrendUp } from "@phosphor-icons/react/dist/ssr";
 import { BrandNews } from "@/components/brand-news";
 import { Hero } from "@/components/hero";
 import BreathingText from "@/components/fancy/text/breathing-text";
@@ -10,8 +9,6 @@ import { SectionLink } from "@/components/section-link";
 import { SiteHeader } from "@/components/site-header";
 import { StoreShowcase } from "@/components/store-showcase";
 import { siteContent } from "@/content/site-content";
-
-const valueIcons = [BowlFood, Storefront, TrendUp];
 
 export default function Home() {
   return (
@@ -89,28 +86,31 @@ export default function Home() {
       <StoreShowcase slides={siteContent.stores} />
 
       <section id="cooperation" className="section cooperation-section">
-        <div className="section-shell cooperation-grid">
-          <Reveal className="cooperation-intro">
+        <div className="section-shell cooperation-showcase">
+          <Reveal className="cooperation-heading">
             <SectionLink label="合作共创" href="#cooperation" />
-            <h2>{siteContent.cooperation.title}</h2>
-            <p>{siteContent.cooperation.body}</p>
-            <a className="inline-link" href="#contact">
-              获取合作方案 <ArrowRight size={18} aria-hidden="true" />
-            </a>
+            <h2>{siteContent.cooperation.body}</h2>
+            <SectionLink className="cooperation-action" label="获取合作方案" href="#contact" />
           </Reveal>
-          <div className="value-list">
-            {siteContent.cooperation.values.map((value, index) => {
-              const Icon = valueIcons[index];
-              return (
-                <Reveal className="value-item" key={value.title} delay={index * 0.08}>
-                  <Icon size={30} weight="light" aria-hidden="true" />
-                  <div>
-                    <h3>{value.title}</h3>
-                    <p>{value.text}</p>
-                  </div>
-                </Reveal>
-              );
-            })}
+          <div className="cooperation-ip-layout">
+            <Reveal className="cooperation-partners" delay={0.06}>
+              <Image
+                src={siteContent.cooperation.partnersImage}
+                alt={siteContent.cooperation.partnersAlt}
+                width={1200}
+                height={800}
+                sizes="(max-width: 767px) 92vw, 35vw"
+              />
+            </Reveal>
+            <Reveal className="cooperation-presenter" delay={0.14}>
+              <Image
+                src={siteContent.cooperation.presenterImage}
+                alt={siteContent.cooperation.presenterAlt}
+                width={1440}
+                height={809}
+                sizes="(max-width: 767px) 92vw, 58vw"
+              />
+            </Reveal>
           </div>
         </div>
       </section>

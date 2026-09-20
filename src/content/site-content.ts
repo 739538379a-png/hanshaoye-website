@@ -52,10 +52,10 @@ export const siteContent = {
     { label: "联系我们", href: "#contact" },
   ] satisfies NavigationItem[],
   hero: {
-    title: "再忙，也要好好吃一顿热饭",
+    title: "千年米艺 手心相传",
+    subtitle: "再忙，也要好好吃一顿热饭",
     description: "从东方米食文化出发，为忙碌日常带来健康、温暖、便捷的现制热食。",
     primaryAction: "获取合作方案",
-    secondaryAction: "认识汉少爷",
   },
   about: {
     title: "从田间一粒米，到掌心一团饭",
@@ -129,22 +129,11 @@ export const siteContent = {
     },
   ] satisfies StoreItem[],
   cooperation: {
-    title: "把好产品，做成长期经营",
     body: "我们期待与认同产品、重视服务并愿意长期投入经营的伙伴同行。",
-    values: [
-      {
-        title: "产品体系",
-        text: "围绕真实消费需求，持续完善新式热饭团产品表达。",
-      },
-      {
-        title: "门店模型",
-        text: "结合不同商业场景，为门店筹备和落地提供标准化参考。",
-      },
-      {
-        title: "运营支持",
-        text: "围绕筹备、培训、开业与日常经营提供约定范围内的支持。",
-      },
-    ],
+    partnersImage: "/media/cooperation-ip-partners.webp",
+    partnersAlt: "两位汉少爷 IP 人物拱手致意",
+    presenterImage: "/media/cooperation-ip-presenter.webp",
+    presenterAlt: "汉少爷 IP 在讲解板前介绍产品体系、门店模型和运营体系支持",
   },
   news: [
     {
