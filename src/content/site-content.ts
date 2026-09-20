@@ -23,12 +23,32 @@ export type JourneyItem = {
   objectPosition: string;
 };
 
+export type NewsItem =
+  | {
+      kind: "article";
+      source: string;
+      date: string;
+      dateTime: string;
+      title: string;
+      excerpt: string;
+      image: string;
+      alt: string;
+      imagePosition: string;
+      href: string;
+    }
+  | {
+      kind: "upcoming";
+      title: string;
+      excerpt: string;
+    };
+
 export const siteContent = {
   navigation: [
-    { label: "关于汉少爷", href: "#about" },
-    { label: "产品展示", href: "#products" },
+    { label: "关于我们", href: "#about" },
+    { label: "关于产品", href: "#products" },
+    { label: "门店布局", href: "#stores" },
     { label: "合作共创", href: "#cooperation" },
-    { label: "门店与案例", href: "#stores" },
+    { label: "品牌动态", href: "#news" },
     { label: "联系我们", href: "#contact" },
   ] satisfies NavigationItem[],
   hero: {
@@ -126,6 +146,37 @@ export const siteContent = {
       },
     ],
   },
+  news: [
+    {
+      kind: "article",
+      source: "搜狐报道",
+      date: "2025.12.25",
+      dateTime: "2025-12-25",
+      title: "汉少爷重庆首店正式亮相",
+      excerpt: "媒体与本地美食达人齐聚现场，共同见证一顿热饭的新表达。",
+      image: "/media/brand-news-01.webp",
+      alt: "汉少爷活动现场的嘉宾与达人合影",
+      imagePosition: "50% 46%",
+      href: "https://www.sohu.com/a/969085204_413673",
+    },
+    {
+      kind: "article",
+      source: "中国通讯社",
+      date: "2025.12.25",
+      dateTime: "2025-12-25",
+      title: "重庆首店亮相，以现蒸手作带来健康新选择",
+      excerpt: "一场围绕好米、现蒸与手作的媒体品鉴会，让热饭的温度被更多人看见。",
+      image: "/media/brand-news-02.webp",
+      alt: "汉少爷活动现场的嘉宾拍摄与品鉴过程",
+      imagePosition: "49% 48%",
+      href: "https://www.hkcna.com.cn/list_49/829.html",
+    },
+    {
+      kind: "upcoming",
+      title: "更多品牌动态，敬请期待",
+      excerpt: "新的热饭故事，正在路上。",
+    },
+  ] satisfies NewsItem[],
   contact: {
     company: "重庆汉少爷品牌管理有限公司",
     phone: "400-870-9288",

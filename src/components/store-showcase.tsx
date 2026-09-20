@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useEffect, useState } from "react";
+import { SectionLink } from "@/components/section-link";
 
 export type StoreShowcaseSlide = {
   image: string;
@@ -43,6 +44,7 @@ export function StoreShowcase({ slides }: StoreShowcaseProps) {
       <div className="section-shell">
         <div className="store-showcase">
           <div className="store-showcase-copy">
+            <SectionLink className="store-showcase-link" label="门店布局" href="#stores" />
             <div className="store-showcase-copy-breathe">
               <p className="store-showcase-kicker">东方暖食空间</p>
               <h2 id="stores-title">让空间，也有一顿热饭的温度。</h2>

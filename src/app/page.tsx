@@ -1,10 +1,12 @@
 import Image from "next/image";
 import { ArrowRight, BowlFood, Storefront, TrendUp } from "@phosphor-icons/react/dist/ssr";
+import { BrandNews } from "@/components/brand-news";
 import { Hero } from "@/components/hero";
 import BreathingText from "@/components/fancy/text/breathing-text";
 import { LeadForm } from "@/components/lead-form";
 import { RiceJourney } from "@/components/rice-journey";
 import { Reveal } from "@/components/reveal";
+import { SectionLink } from "@/components/section-link";
 import { SiteHeader } from "@/components/site-header";
 import { StoreShowcase } from "@/components/store-showcase";
 import { siteContent } from "@/content/site-content";
@@ -20,7 +22,7 @@ export default function Home() {
       <section id="about" className="section about-section">
         <div className="section-shell about-grid">
           <div className="about-copy">
-            <p className="section-kicker">认识汉少爷</p>
+            <SectionLink label="关于我们" href="#about" />
             <h2>{siteContent.about.title}</h2>
             <p className="section-body">{siteContent.about.body}</p>
             <p className="brand-statement">{siteContent.about.statement}</p>
@@ -31,6 +33,7 @@ export default function Home() {
 
       <section id="products" className="section products-section">
         <div className="section-shell">
+          <SectionLink label="关于产品" href="#products" />
           <Reveal className="section-heading product-heading">
             <h2>把一顿热饭，认真握在手里</h2>
             <p>以东方米食文化为基础，融合现代消费场景，打造健康、温暖、便捷的新式热饭团产品体系</p>
@@ -88,6 +91,7 @@ export default function Home() {
       <section id="cooperation" className="section cooperation-section">
         <div className="section-shell cooperation-grid">
           <Reveal className="cooperation-intro">
+            <SectionLink label="合作共创" href="#cooperation" />
             <h2>{siteContent.cooperation.title}</h2>
             <p>{siteContent.cooperation.body}</p>
             <a className="inline-link" href="#contact">
@@ -111,10 +115,12 @@ export default function Home() {
         </div>
       </section>
 
+      <BrandNews items={siteContent.news} />
+
       <section id="contact" className="section contact-section">
         <div className="section-shell contact-grid">
           <Reveal className="contact-copy">
-            <p className="section-kicker">合作咨询</p>
+            <SectionLink label="联系我们" href="#contact" />
             <h2>一起把一顿热饭，做成值得长期坚持的事</h2>
             <p>填写基本信息，我们会结合意向城市与实际需求进一步沟通。</p>
             <a href={`tel:${siteContent.contact.phone.replaceAll("-", "")}`}>{siteContent.contact.phone}</a>
