@@ -12,7 +12,7 @@ export function BrandNews({ items }: BrandNewsProps) {
     <section id="news" className="section brand-news-section" aria-labelledby="brand-news-title">
       <div className="section-shell">
         <div className="section-entry">
-          <SectionLink label="品牌动态" href="#news" />
+          <SectionLink label="品牌动态" href="/news" />
         </div>
         <div className="brand-news-heading">
           <p className="brand-news-kicker">Brand news</p>

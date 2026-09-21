@@ -43,7 +43,7 @@ export function StoreShowcase({ slides }: StoreShowcaseProps) {
     <section id="stores" className="section stores-section" aria-labelledby="stores-title">
       <div className="section-shell">
         <div className="section-entry">
-          <SectionLink label="门店布局" href="#stores" />
+          <SectionLink label="门店布局" href="/stores" />
         </div>
         <div className="store-showcase">
           <div className="store-showcase-copy">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { ReturnButton } from "@/components/return-button";
 import { SiteHeader } from "@/components/site-header";
 import { siteContent } from "@/content/site-content";
 
@@ -19,6 +20,7 @@ export default function AboutPage() {
       <SiteHeader navigation={aboutNavigation} homeHref="/" showCta={false} />
 
       <div className="section-shell about-page-shell">
+        <ReturnButton fallbackHref="/#about" />
         <section className="about-page-section" aria-labelledby="mission-title">
           <div className="about-page-copy">
             <p className="about-page-kicker">ABOUT HAN SHAO YE</p>

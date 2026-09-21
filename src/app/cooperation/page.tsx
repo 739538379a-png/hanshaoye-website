@@ -1,14 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
+import { ReturnButton } from "@/components/return-button";
 import { SiteHeader } from "@/components/site-header";
 import { siteContent } from "@/content/site-content";
 
-const cooperationNavigation = siteContent.navigation.map((item) => {
-  if (item.label === "合作共创") return item;
-  if (item.label === "关于我们") return { ...item, href: "/#about" };
-  return item.href.startsWith("#") ? { ...item, href: `/${item.href}` } : item;
-});
+const cooperationNavigation = [...siteContent.navigation];
 
 const cooperationSections = [
   {
@@ -84,6 +81,7 @@ export default function CooperationPage() {
       <section className="cooperation-page-hero" aria-labelledby="cooperation-page-title">
         <div className="section-shell cooperation-page-hero-grid">
           <div className="cooperation-page-hero-copy">
+            <ReturnButton fallbackHref="/#cooperation" />
             <p>合作共创</p>
             <h1 id="cooperation-page-title">与君同行，共谋长久</h1>
             <span>从一枚热饭团出发，和愿意认真经营的伙伴，一起走向更长久的日常。</span>

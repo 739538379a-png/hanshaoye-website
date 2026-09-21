@@ -39,7 +39,7 @@ export default function Home() {
       <section id="products" className="section products-section">
         <div className="section-shell">
           <div className="section-entry">
-            <SectionLink label="关于产品" href="#products" />
+            <SectionLink label="关于产品" href="/products" />
           </div>
           <Reveal className="section-heading product-heading">
             <h2>
@@ -134,7 +134,7 @@ export default function Home() {
       <section id="contact" className="section contact-section">
         <div className="section-shell">
           <div className="section-entry">
-            <SectionLink label="联系我们" href="#contact" />
+            <SectionLink label="联系我们" href="/contact" />
           </div>
           <div className="contact-grid">
             <Reveal className="contact-copy">

@@ -45,11 +45,11 @@ export type NewsItem =
 export const siteContent = {
   navigation: [
     { label: "关于我们", href: "/about" },
-    { label: "关于产品", href: "#products" },
-    { label: "门店布局", href: "#stores" },
+    { label: "关于产品", href: "/products" },
+    { label: "门店布局", href: "/stores" },
     { label: "合作共创", href: "/cooperation" },
-    { label: "品牌动态", href: "#news" },
-    { label: "联系我们", href: "#contact" },
+    { label: "品牌动态", href: "/news" },
+    { label: "联系我们", href: "/contact" },
   ] satisfies NavigationItem[],
   hero: {
     title: "千年米艺 手心相传",
