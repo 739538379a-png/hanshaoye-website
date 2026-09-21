@@ -6,7 +6,14 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useEffect, useState } from "react";
 import type { NavigationItem } from "@/content/site-content";
 
-export function SiteHeader({ navigation }: { navigation: NavigationItem[] }) {
+type SiteHeaderProps = {
+  navigation: NavigationItem[];
+  homeHref?: string;
+  showCta?: boolean;
+  ctaHref?: string;
+};
+
+export function SiteHeader({ navigation, homeHref = "#top", showCta = true, ctaHref = "#contact" }: SiteHeaderProps) {
   const [open, setOpen] = useState(false);
   const reduceMotion = useReducedMotion();
 
@@ -27,7 +34,7 @@ export function SiteHeader({ navigation }: { navigation: NavigationItem[] }) {
 
   return (
     <header className="site-header">
-      <a className="brand-link" href="#top" aria-label="返回首页顶部">
+      <a className="brand-link" href={homeHref} aria-label="返回首页顶部">
         <Image src="/brand/logo-horizontal.png" width={360} height={105} alt="汉少爷手作饭团" priority />
       </a>
 
@@ -39,9 +46,13 @@ export function SiteHeader({ navigation }: { navigation: NavigationItem[] }) {
         ))}
       </nav>
 
-      <a className="header-cta" href="#contact">
-        获取合作方案
-      </a>
+      {showCta ? (
+        <a className="header-cta" href={ctaHref}>
+          获取合作方案
+        </a>
+      ) : (
+        <span className="header-cta-spacer" aria-hidden="true" />
+      )}
 
       <button
         className="menu-button"
@@ -87,9 +98,11 @@ export function SiteHeader({ navigation }: { navigation: NavigationItem[] }) {
                 </motion.a>
               ))}
             </nav>
-            <a className="mobile-menu-cta" href="#contact" onClick={() => setOpen(false)}>
-              获取合作方案
-            </a>
+            {showCta ? (
+              <a className="mobile-menu-cta" href={ctaHref} onClick={() => setOpen(false)}>
+                获取合作方案
+              </a>
+            ) : null}
           </motion.div>
         ) : null}
       </AnimatePresence>

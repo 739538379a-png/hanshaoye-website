@@ -120,6 +120,113 @@ a {
   line-height: 1.85;
 }
 
+.about-page {
+  min-height: 100dvh;
+  padding: clamp(8.5rem, 14vw, 11.5rem) 1.25rem clamp(5.5rem, 12vw, 10rem);
+}
+
+.about-page-shell {
+  display: grid;
+  gap: clamp(5rem, 10vw, 9rem);
+}
+
+.about-page-section {
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.88fr) minmax(22rem, 1.12fr);
+  align-items: center;
+  gap: clamp(2.5rem, 7vw, 8rem);
+}
+
+.about-page-copy {
+  max-width: 39rem;
+}
+
+.about-page-kicker {
+  margin: 0 0 1.25rem;
+  color: var(--grain-gold);
+  font-size: 0.76rem;
+  font-weight: 750;
+  letter-spacing: 0.16em;
+}
+
+.about-page-copy h1,
+.about-page-copy h2 {
+  max-width: 10ch;
+  margin: 0;
+  font-size: clamp(2.5rem, 4.7vw, 4.75rem);
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  line-height: 1.08;
+}
+
+.about-page-values {
+  display: grid;
+  gap: 1.3rem;
+  margin: clamp(2rem, 4vw, 3.25rem) 0 0;
+}
+
+.about-page-values div {
+  padding-bottom: 1.15rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.about-page-values dt {
+  margin: 0 0 0.5rem;
+  color: var(--grain-gold);
+  font-size: 0.78rem;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+}
+
+.about-page-values dd,
+.about-page-copy > p {
+  margin: 0;
+  color: var(--brown-soft);
+  font-size: clamp(1rem, 1.25vw, 1.12rem);
+  line-height: 1.9;
+}
+
+.about-page-summary {
+  margin-top: clamp(1.8rem, 3vw, 2.75rem) !important;
+}
+
+.about-page-story {
+  display: grid;
+  gap: 1.35rem;
+  margin-top: clamp(2rem, 4vw, 3.25rem);
+}
+
+.about-page-story p {
+  margin: 0;
+}
+
+.about-page-story strong {
+  display: block;
+  margin-bottom: 0.42rem;
+  color: var(--brown);
+  font-weight: 750;
+}
+
+.about-page-media {
+  position: relative;
+  min-height: clamp(27rem, 48vw, 43rem);
+  overflow: hidden;
+  border-radius: var(--radius-media);
+  box-shadow: var(--shadow);
+}
+
+.about-page-media img {
+  object-fit: cover;
+}
+
+.about-page-media-rice img {
+  object-position: 58% center;
+}
+
+.about-page-media-making img {
+  object-position: 52% center;
+}
+
 .site-header {
   position: fixed;
   top: 0;
@@ -198,6 +305,11 @@ a {
   background: var(--brown);
   font-size: 0.85rem;
   font-weight: 700;
+}
+
+.header-cta-spacer {
+  width: 8.25rem;
+  min-height: 46px;
 }
 
 .header-cta:active,
@@ -1397,7 +1509,8 @@ a {
 
 @media (max-width: 1023px) {
   .desktop-nav,
-  .header-cta {
+  .header-cta,
+  .header-cta-spacer {
     display: none;
   }
 
@@ -1512,9 +1625,31 @@ a {
   }
 
   .about-grid,
+  .about-page-section,
   .contact-grid,
   .footer-grid {
     grid-template-columns: 1fr;
+  }
+
+  .about-page {
+    padding-inline: 1.1rem;
+  }
+
+  .about-page-shell {
+    gap: 5rem;
+  }
+
+  .about-page-section {
+    gap: 2.25rem;
+  }
+
+  .about-page-copy h1,
+  .about-page-copy h2 {
+    font-size: clamp(2.3rem, 10.5vw, 3.55rem);
+  }
+
+  .about-page-media {
+    min-height: min(118vw, 38rem);
   }
 
   .about-copy {
@@ -1679,5 +1814,370 @@ a {
 
   .site-header {
     background: var(--paper);
+  }
+}
+
+.cooperation-page {
+  padding-bottom: 7.5rem;
+}
+
+.cooperation-page-hero {
+  padding: clamp(8rem, 13vw, 12rem) 1.25rem clamp(5rem, 9vw, 8rem);
+  border-bottom: 1px solid var(--line);
+}
+
+.cooperation-page-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(20rem, 1.1fr);
+  align-items: center;
+  gap: clamp(2.5rem, 7vw, 8rem);
+}
+
+.cooperation-page-hero-copy > p,
+.cooperation-detail-label,
+.cooperation-faq-heading > p {
+  margin: 0 0 1rem;
+  color: var(--grain-gold);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.cooperation-page-hero-copy h1 {
+  max-width: 9ch;
+  margin: 0;
+  color: var(--brown);
+  font-size: clamp(3.2rem, 6.2vw, 7rem);
+  line-height: 0.98;
+  letter-spacing: -0.08em;
+}
+
+.cooperation-page-hero-copy > span,
+.cooperation-faq-heading > span {
+  display: block;
+  max-width: 31rem;
+  margin-top: 1.6rem;
+  color: var(--brown-soft);
+  font-size: clamp(1rem, 1.35vw, 1.16rem);
+  line-height: 1.9;
+}
+
+.cooperation-page-hero-media {
+  min-height: clamp(18rem, 34vw, 34rem);
+  display: grid;
+  place-items: end center;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-media);
+  background: rgba(245, 239, 230, 0.68);
+  box-shadow: var(--shadow);
+}
+
+.cooperation-page-hero-media img {
+  width: 100%;
+  height: auto;
+  transition: transform 520ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cooperation-page-hero-media:hover img {
+  transform: scale(1.025);
+}
+
+.cooperation-page-content {
+  display: grid;
+  gap: clamp(5.5rem, 12vw, 11rem);
+  padding-block: clamp(5.5rem, 12vw, 11rem);
+}
+
+.cooperation-detail {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: clamp(2.5rem, 8vw, 9rem);
+}
+
+.cooperation-detail-reversed .cooperation-detail-copy {
+  order: 2;
+}
+
+.cooperation-detail-reversed .cooperation-detail-media {
+  order: 1;
+}
+
+.cooperation-detail-copy h2,
+.cooperation-faq-heading h2 {
+  max-width: 10ch;
+  margin: 0;
+  color: var(--brown);
+  font-size: clamp(2.45rem, 4.5vw, 5.25rem);
+  line-height: 1.04;
+  letter-spacing: -0.07em;
+}
+
+.cooperation-detail-copy > p:not(.cooperation-detail-label) {
+  max-width: 31rem;
+  margin: 1.5rem 0 0;
+  color: var(--brown-soft);
+  font-size: clamp(0.98rem, 1.2vw, 1.12rem);
+  line-height: 1.9;
+}
+
+.cooperation-points,
+.cooperation-steps {
+  display: grid;
+  gap: 0.85rem;
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cooperation-points li,
+.cooperation-steps li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 2.5rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--brown);
+  font-weight: 700;
+}
+
+.cooperation-points li::before {
+  width: 0.45rem;
+  height: 0.45rem;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--accent);
+  content: "";
+}
+
+.cooperation-steps li span {
+  color: var(--grain-gold);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.cooperation-detail-media {
+  position: relative;
+  min-height: clamp(22rem, 38vw, 37rem);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-media);
+  background: #e4d7c7;
+  box-shadow: var(--shadow);
+}
+
+.cooperation-detail-media-cover img {
+  object-fit: cover;
+  transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cooperation-detail-media-contain {
+  background: rgba(245, 239, 230, 0.7);
+}
+
+.cooperation-detail-media-contain img {
+  object-fit: contain;
+  padding: clamp(1.2rem, 3vw, 3rem);
+  transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cooperation-detail-media:hover img {
+  transform: scale(1.03);
+}
+
+.cooperation-faq {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(20rem, 1.15fr);
+  grid-template-areas:
+    "heading list"
+    "media list";
+  align-items: start;
+  gap: clamp(2rem, 5vw, 5rem) clamp(2.5rem, 8vw, 9rem);
+  padding-top: clamp(1rem, 3vw, 3rem);
+}
+
+.cooperation-faq-heading {
+  grid-area: heading;
+}
+
+.cooperation-faq-list {
+  grid-area: list;
+}
+
+.cooperation-faq-list details {
+  border-top: 1px solid var(--line);
+}
+
+.cooperation-faq-list details:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.cooperation-faq-list summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 5rem;
+  cursor: pointer;
+  color: var(--brown);
+  font-size: clamp(1.05rem, 1.5vw, 1.34rem);
+  font-weight: 750;
+  list-style: none;
+}
+
+.cooperation-faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.cooperation-faq-list summary::after {
+  flex: 0 0 auto;
+  color: var(--grain-gold);
+  content: "+";
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.cooperation-faq-list details[open] summary::after {
+  content: "−";
+}
+
+.cooperation-faq-list details p {
+  max-width: 38rem;
+  margin: -0.3rem 0 1.5rem;
+  color: var(--brown-soft);
+  line-height: 1.85;
+}
+
+.cooperation-faq-media {
+  position: relative;
+  grid-area: media;
+  min-height: 16rem;
+  overflow: hidden;
+  border-radius: var(--radius-media);
+  background: #d8c8b3;
+}
+
+.cooperation-faq-media img {
+  object-fit: cover;
+}
+
+.cooperation-float-cta {
+  position: fixed;
+  z-index: calc(var(--nav-layer) + 1);
+  right: clamp(1.25rem, 3vw, 2.8rem);
+  bottom: clamp(1.25rem, 3vw, 2.8rem);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-height: 3.7rem;
+  padding: 0.45rem 0.55rem 0.45rem 1.25rem;
+  border: 1px solid rgba(245, 239, 230, 0.48);
+  border-radius: var(--radius-action);
+  color: var(--paper-soft);
+  background: var(--brown);
+  box-shadow: 0 16px 38px rgba(65, 35, 15, 0.27);
+  font-weight: 800;
+  transition: transform 220ms ease, background 220ms ease;
+}
+
+.cooperation-float-cta i {
+  display: grid;
+  width: 2.7rem;
+  height: 2.7rem;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--brown);
+  background: var(--paper-soft);
+  font-style: normal;
+}
+
+.cooperation-float-cta:hover,
+.cooperation-float-cta:focus-visible {
+  transform: translateY(-0.2rem);
+  background: #512b12;
+}
+
+.cooperation-float-cta:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 767px) {
+  .cooperation-page {
+    padding-bottom: 6.5rem;
+  }
+
+  .cooperation-page-hero {
+    padding: 7.5rem 1.1rem 5rem;
+  }
+
+  .cooperation-page-hero-grid,
+  .cooperation-detail,
+  .cooperation-faq {
+    grid-template-columns: 1fr;
+  }
+
+  .cooperation-page-hero-copy h1 {
+    max-width: 10ch;
+    font-size: clamp(3rem, 13vw, 4.4rem);
+  }
+
+  .cooperation-page-hero-media {
+    min-height: 17rem;
+  }
+
+  .cooperation-page-content {
+    gap: 5.5rem;
+    padding-block: 5.5rem;
+  }
+
+  .cooperation-detail-reversed .cooperation-detail-copy,
+  .cooperation-detail-reversed .cooperation-detail-media {
+    order: initial;
+  }
+
+  .cooperation-detail-copy h2,
+  .cooperation-faq-heading h2 {
+    max-width: 11ch;
+    font-size: clamp(2.25rem, 10.2vw, 3.5rem);
+  }
+
+  .cooperation-detail-media {
+    min-height: min(94vw, 29rem);
+  }
+
+  .cooperation-faq {
+    grid-template-areas:
+      "heading"
+      "list"
+      "media";
+    gap: 2.5rem;
+  }
+
+  .cooperation-faq-media {
+    min-height: 14rem;
+  }
+
+  .cooperation-float-cta {
+    right: 50%;
+    bottom: max(1rem, env(safe-area-inset-bottom));
+    min-height: 3.35rem;
+    padding-left: 1.05rem;
+    transform: translateX(50%);
+  }
+
+  .cooperation-float-cta:hover,
+  .cooperation-float-cta:focus-visible {
+    transform: translateX(50%) translateY(-0.15rem);
+  }
+
+  .cooperation-float-cta:active {
+    transform: translateX(50%);
+  }
+
+  .cooperation-float-cta i {
+    width: 2.35rem;
+    height: 2.35rem;
   }
 }

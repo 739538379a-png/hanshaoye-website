@@ -19,7 +19,7 @@ export default function Home() {
       <section id="about" className="section about-section">
         <div className="section-shell">
           <div className="section-entry">
-            <SectionLink label="关于我们" href="#about" />
+            <SectionLink label="关于我们" href="/about" />
           </div>
           <div className="about-grid">
             <div className="about-copy">
@@ -101,7 +101,7 @@ export default function Home() {
       <section id="cooperation" className="section cooperation-section">
         <div className="section-shell cooperation-showcase">
           <div className="section-entry">
-            <SectionLink label="合作共创" href="#cooperation" />
+            <SectionLink label="合作共创" href="/cooperation" />
           </div>
           <Reveal className="cooperation-heading">
             <h2 className="cooperation-manifesto">与君同行，共谋长久</h2>
