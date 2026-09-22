@@ -2183,11 +2183,15 @@ a {
 }
 
 .return-button {
+  position: fixed;
+  z-index: 30;
+  right: clamp(1rem, 3vw, 2.25rem);
+  top: max(5.6rem, calc(env(safe-area-inset-top) + 4.75rem));
   display: inline-flex;
   min-height: 42px;
   align-items: center;
   gap: 1.05rem;
-  margin: 0 0 clamp(2.8rem, 5vw, 4.8rem);
+  margin: 0;
   border: 1px solid var(--brown);
   border-radius: var(--radius-action);
   padding: 0.3rem 0.35rem 0.3rem 1.05rem;
@@ -2197,8 +2201,10 @@ a {
   font-weight: 750;
   letter-spacing: 0.08em;
   line-height: 1;
+  text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
+  box-shadow: 0 12px 28px rgba(82, 45, 20, 0.2);
   transition: transform 240ms ease, background-color 240ms ease;
 }
 
@@ -2217,6 +2223,409 @@ a {
 .return-button:hover,
 .return-button:focus-visible {
   background: #512b12;
+}
+
+.cooperation-page-refined {
+  padding-bottom: clamp(5rem, 10vw, 9rem);
+}
+
+.cooperation-refined-hero {
+  padding: clamp(8rem, 13vw, 11.5rem) 1.25rem clamp(5rem, 9vw, 8rem);
+  border-bottom: 1px solid var(--line);
+}
+
+.cooperation-refined-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(24rem, 1.15fr);
+  align-items: center;
+  gap: clamp(3rem, 8vw, 10rem);
+}
+
+.cooperation-refined-hero-copy > p,
+.cooperation-section-heading > p,
+.cooperation-conditions-copy > p,
+.cooperation-form-copy > p {
+  margin: 0 0 1rem;
+  color: var(--grain-gold);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.cooperation-refined-hero-copy > p {
+  margin-bottom: 1.25rem;
+  color: var(--brown);
+  font-size: clamp(3.2rem, 6.1vw, 7rem);
+  letter-spacing: -0.08em;
+  line-height: 0.92;
+}
+
+.cooperation-section-heading > p,
+.cooperation-conditions-copy > p {
+  font-size: clamp(1.75rem, 3.1vw, 3.45rem);
+  letter-spacing: -0.065em;
+  line-height: 1;
+}
+
+.cooperation-refined-hero-copy h1,
+.cooperation-section-heading h2,
+.cooperation-conditions-copy h2,
+.cooperation-form-copy h2 {
+  margin: 0;
+  color: var(--brown);
+  font-weight: 740;
+  letter-spacing: -0.075em;
+  line-height: 1.02;
+}
+
+.cooperation-refined-hero-copy h1 {
+  max-width: 9ch;
+  font-size: clamp(2.45rem, 3.75vw, 4.45rem);
+}
+
+.cooperation-refined-hero-copy > span,
+.cooperation-section-heading > span,
+.cooperation-conditions-copy > span,
+.cooperation-form-copy > span {
+  display: block;
+  max-width: 35rem;
+  margin-top: 1.5rem;
+  color: var(--brown-soft);
+  font-size: clamp(1rem, 1.35vw, 1.16rem);
+  line-height: 1.9;
+}
+
+.cooperation-refined-hero-media {
+  position: relative;
+  min-height: clamp(23rem, 38vw, 38rem);
+  overflow: hidden;
+  border-radius: var(--radius-media);
+  box-shadow: var(--shadow);
+}
+
+.cooperation-refined-hero-media img,
+.cooperation-support-card-media img,
+.cooperation-conditions-media img,
+.cooperation-form-visual img {
+  object-fit: cover;
+  transition: transform 420ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cooperation-refined-hero-media:hover img,
+.cooperation-support-card:hover img,
+.cooperation-conditions-media:hover img,
+.cooperation-form-visual:hover img {
+  transform: scale(1.025);
+}
+
+.cooperation-refined-content {
+  display: grid;
+  gap: clamp(6.5rem, 13vw, 12rem);
+  padding-top: clamp(5.5rem, 10vw, 9rem);
+}
+
+.cooperation-section-heading {
+  max-width: 52rem;
+}
+
+.cooperation-section-heading h2,
+.cooperation-conditions-copy h2,
+.cooperation-form-copy h2 {
+  max-width: 12ch;
+  font-size: clamp(3.1rem, 5.5vw, 6.4rem);
+}
+
+.cooperation-advantages .cooperation-section-heading h2 {
+  max-width: none;
+  font-size: clamp(2.75rem, 4.5vw, 5.35rem);
+  white-space: nowrap;
+}
+
+.cooperation-support-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2.4vw, 2.4rem);
+  margin-top: clamp(3rem, 6vw, 5.5rem);
+}
+
+.cooperation-support-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-media);
+  background: rgba(245, 239, 230, 0.48);
+  box-shadow: 0 18px 45px rgba(103, 58, 27, 0.08);
+}
+
+.cooperation-support-card-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.cooperation-support-card-copy {
+  padding: clamp(1.25rem, 2vw, 1.8rem);
+}
+
+.cooperation-support-card h3 {
+  margin: 0;
+  font-size: clamp(1.65rem, 2.3vw, 2.25rem);
+  letter-spacing: -0.045em;
+}
+
+.cooperation-support-card p {
+  margin: 0.8rem 0 0;
+  color: var(--brown-soft);
+  font-size: clamp(1.06rem, 1.35vw, 1.2rem);
+  line-height: 1.8;
+}
+
+.cooperation-conditions {
+  display: grid;
+  grid-template-columns: minmax(21rem, 1fr) minmax(18rem, 0.8fr);
+  align-items: center;
+  gap: clamp(3rem, 9vw, 11rem);
+}
+
+.cooperation-conditions-media {
+  position: relative;
+  min-height: clamp(25rem, 42vw, 41rem);
+  overflow: hidden;
+  border-radius: var(--radius-media);
+  box-shadow: var(--shadow);
+}
+
+.cooperation-conditions-copy ul {
+  display: grid;
+  gap: 0.95rem;
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cooperation-conditions-copy li {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-height: 3.1rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--brown);
+  font-size: clamp(1.1rem, 1.55vw, 1.35rem);
+  font-weight: 720;
+}
+
+.cooperation-conditions-copy li svg {
+  flex: 0 0 auto;
+  color: var(--grain-gold);
+}
+
+.cooperation-process {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.45fr) minmax(36rem, 1.55fr);
+  align-items: center;
+  gap: clamp(3rem, 9vw, 11rem);
+}
+
+.cooperation-process-heading {
+  align-self: start;
+  padding-top: 0.65rem;
+}
+
+.cooperation-milestones {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  align-items: start;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cooperation-milestones li {
+  position: relative;
+  display: grid;
+  gap: 1.35rem;
+  min-width: 0;
+}
+
+.cooperation-milestones li:not(:last-child)::after {
+  position: absolute;
+  top: 2rem;
+  left: calc(4rem + 1px);
+  right: 0;
+  height: 1px;
+  background: var(--line);
+  content: "";
+}
+
+.cooperation-milestones span {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 4rem;
+  height: 4rem;
+  place-items: center;
+  border: 1px solid var(--brown);
+  border-radius: 50%;
+  color: var(--paper-soft);
+  background: var(--brown);
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.cooperation-milestones strong {
+  max-width: 7ch;
+  color: var(--brown);
+  font-size: clamp(1.15rem, 1.65vw, 1.45rem);
+  line-height: 1.4;
+}
+
+.cooperation-form-section {
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.8fr) minmax(25rem, 1.2fr);
+  align-items: start;
+  gap: clamp(3rem, 9vw, 11rem);
+  padding: clamp(2.5rem, 6vw, 5.5rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-media);
+  background: rgba(194, 155, 97, 0.1);
+}
+
+.cooperation-form-section .form-wrap {
+  padding: clamp(1.4rem, 3vw, 2.5rem);
+}
+
+.cooperation-form-visual {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  margin-top: 1.15rem;
+  overflow: hidden;
+  border-radius: calc(var(--radius-media) - 0.35rem);
+}
+
+.cooperation-form-visual img {
+  object-fit: cover;
+}
+
+.cooperation-form-copy > .cooperation-form-visual + span {
+  margin-top: 1.35rem;
+}
+
+.cooperation-form-copy > span {
+  white-space: nowrap;
+}
+
+@media (max-width: 1023px) {
+  .cooperation-support-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cooperation-support-card {
+    display: grid;
+    grid-template-columns: minmax(12rem, 0.9fr) minmax(16rem, 1.1fr);
+  }
+
+  .cooperation-support-card-copy {
+    align-self: center;
+  }
+
+  .cooperation-process {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .cooperation-refined-hero {
+    padding: 7.5rem 1.1rem 5rem;
+  }
+
+  .cooperation-refined-hero-grid,
+  .cooperation-conditions,
+  .cooperation-form-section {
+    grid-template-columns: 1fr;
+  }
+
+  .cooperation-refined-hero-copy h1 {
+    font-size: clamp(2.3rem, 9.2vw, 3.65rem);
+  }
+
+  .cooperation-refined-hero-copy > p {
+    font-size: clamp(3rem, 13.2vw, 4.8rem);
+  }
+
+  .cooperation-section-heading h2,
+  .cooperation-conditions-copy h2,
+  .cooperation-form-copy h2 {
+    font-size: clamp(2.9rem, 12vw, 4.5rem);
+  }
+
+  .cooperation-advantages .cooperation-section-heading h2 {
+    font-size: clamp(2.35rem, 9.7vw, 3.8rem);
+    white-space: normal;
+  }
+
+  .cooperation-refined-hero-media {
+    min-height: min(102vw, 30rem);
+  }
+
+  .cooperation-refined-content {
+    gap: 5.5rem;
+    padding-top: 5rem;
+  }
+
+  .cooperation-support-grid {
+    gap: 1.1rem;
+    margin-top: 2.5rem;
+  }
+
+  .cooperation-support-card {
+    grid-template-columns: 1fr;
+  }
+
+  .cooperation-conditions-media {
+    min-height: min(95vw, 31rem);
+  }
+
+  .cooperation-process {
+    gap: 2.5rem;
+  }
+
+  .cooperation-milestones {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .cooperation-milestones li {
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .cooperation-milestones li:not(:last-child)::after {
+    top: 4rem;
+    bottom: -1.25rem;
+    left: 2rem;
+    right: auto;
+    width: 1px;
+    height: auto;
+  }
+
+  .cooperation-milestones strong {
+    max-width: none;
+  }
+
+  .cooperation-form-section {
+    gap: 2.5rem;
+    padding: 1.3rem;
+  }
+
+  .cooperation-form-visual {
+    margin-top: 0.9rem;
+  }
+
+  .cooperation-form-copy > span {
+    font-size: 0.86rem;
+    letter-spacing: -0.045em;
+  }
 }
 
 .return-button:hover i,
@@ -2500,6 +2909,7 @@ a {
   }
 
   .return-button {
-    margin-bottom: 2.5rem;
+    right: 1rem;
+    top: max(5.4rem, calc(env(safe-area-inset-top) + 4.5rem));
   }
 }
