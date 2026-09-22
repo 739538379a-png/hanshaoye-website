@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { ProductCatalog } from "@/components/product-catalog";
 import { ReturnButton } from "@/components/return-button";
 import { SiteHeader } from "@/components/site-header";
 import { siteContent } from "@/content/site-content";
@@ -13,34 +14,32 @@ export default function ProductsPage() {
   return (
     <main className="secondary-page products-page">
       <SiteHeader navigation={[...siteContent.navigation]} homeHref="/" />
-      <section className="secondary-page-hero" aria-labelledby="products-page-title">
+      <section className="products-philosophy" aria-labelledby="products-page-title">
         <div className="section-shell">
           <ReturnButton fallbackHref="/#products" />
-          <div className="secondary-page-heading">
-            <p>关于产品</p>
-            <h1 id="products-page-title">
-              <span>把一枚热饭团</span>
-              <span>认真握在手里</span>
-            </h1>
-            <span>以东方米食文化为基础，融合现代消费场景，打造健康、温暖、便捷的新式热饭团产品体系。</span>
+          <div className="products-philosophy-layout">
+            <div className="products-philosophy-copy">
+              <h1 id="products-page-title">产品理念</h1>
+              <p className="products-philosophy-description">
+                <span>以东方米食文化为基础，融合现代消费场景，</span>
+                <span>打造健康、温暖、便捷的新式热饭团产品体系。</span>
+              </p>
+            </div>
+            <figure className="products-philosophy-photo">
+              <Image
+                src="/media/products/product-philosophy.webp"
+                alt="木盘上陈列的汉少爷饭团与新鲜食材"
+                fill
+                priority
+                sizes="(max-width: 767px) calc(100vw - 2.2rem), 48vw"
+              />
+            </figure>
           </div>
         </div>
       </section>
 
-      <section className="secondary-page-content section-shell" aria-label="汉少爷产品展示">
-        <div className="product-page-gallery">
-          {siteContent.products.map((product) => (
-            <figure className="product-page-figure" key={product.image}>
-              <Image
-                src={product.image}
-                alt={product.alt}
-                fill
-                sizes="(max-width: 767px) calc((100vw - 3.5rem) / 3), 30vw"
-                style={{ objectPosition: product.imagePosition }}
-              />
-            </figure>
-          ))}
-        </div>
+      <section className="products-catalog-section section-shell">
+        <ProductCatalog />
       </section>
     </main>
   );
